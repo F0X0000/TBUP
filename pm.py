@@ -61,6 +61,13 @@ def linkgitcheck(link):
     except requests.exceptions.MissingSchema:
         return False
 
+def repo(url):
+    url_parts = url.split('/')
+    repo_name = url_parts[-1]
+    if repo_name.endswith('.git'):
+        repo_name = repo_name[:-4]
+
+    return repo_name
 
 
 #----------------------------------------------------------------------------#
@@ -77,8 +84,11 @@ elif a1 == 'install':
         if dotgitcheck(a2):
             check = linkgitcheck(a2)
             if check == True:
-                os.system("git init {path}")
-                os.system(f"git clone {a2} {path}")
+                os.chdir(path)
+                os.system(f"git clone {a2}")
+                os.system(f"rm -rf {path}/{repo(a2)}/README.md")
+                os.system(f"mv {path}/{repo(a2)}/* {path}")
+                os.system(f"rm -rf {path}/{repo(a2)}")
                 print("Repository cloned successfully.")
             if check == False:
                 print("Repository not found at this link.")
