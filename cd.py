@@ -28,4 +28,4 @@ newpath = cd(path, q)
 if pathcheck(newpath):
     client.changedirectory(newpath)
 else:
-    print("The system cannot find the directory specified.")
+    print("The system cannot find the directory.")
