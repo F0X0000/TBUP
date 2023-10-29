@@ -9,6 +9,12 @@ username = os.getlogin()
 qw = [" ", " "]
 qe = ['', ' ']
 
+def location():
+    path = client.printworkingdirectory()
+    paths = path.split("/")
+    return paths[-1]
+
+
 def file_exists(file_path):
     return os.path.exists(file_path)
 def inp(style):
@@ -33,6 +39,7 @@ def openpy(q, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10):
     else:
         return True
 def start():
+    style = f"{location()}>"
     q = inp(style)
     if q[0] == '0':
         return True
