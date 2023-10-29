@@ -38,8 +38,8 @@ try:
 except IndexError:
     pass
 username = os.getlogin()
-path = f"/home/{username}/pyter"
-nonpermision = ["pm", "cls", "exit",]
+path = os.path.dirname(os.getcwd())
+nonpermision = ["pm", "clear", "cd", "ls", "pwd"]
 #----------------------------------------------------------------------------#
 
 def lista(directory):
