@@ -24,7 +24,6 @@ def inp(style):
         q = ' '
         return q
     else:
-        q = q.lower()
         list  =  re.findall(r'"[^"]+"|\S+', q)
         list = [re.sub('[\'"]', '', token) for token in list]
         for i in range(50):
