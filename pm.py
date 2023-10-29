@@ -39,7 +39,7 @@ except IndexError:
     pass
 username = os.getlogin()
 path = os.path.dirname(os.getcwd())
-nonpermision = ["pm", "clear", "cd", "ls", "pwd"]
+nonpermision = ["pm", "clear", "cd", "ls", "pwd", "create"]
 #----------------------------------------------------------------------------#
 
 def lista(directory):
