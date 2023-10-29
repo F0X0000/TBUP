@@ -21,6 +21,7 @@ will download and install the software from the specified GitHub repository.
     The `remove` command uninstalls and deletes software packages from the
 system.
 """
+
 import os
 import sys
 import requests
