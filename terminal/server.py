@@ -1,6 +1,21 @@
 from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.server import SimpleXMLRPCRequestHandler
 
+storage = []
+
+def adddata(name, info):
+    global storage
+    storage[name] = info
+    return True
+
+def getdata(name):
+    global storage
+    return storage[name]
+
+def deldata(name):
+    global storage
+    del storage[name]
+    return True
 
 directory = None
 
