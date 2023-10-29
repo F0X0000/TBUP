@@ -1,2 +1,3 @@
 pypi-xmlrpc
 prompt_toolkit
+termcolor
