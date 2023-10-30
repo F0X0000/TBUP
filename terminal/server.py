@@ -33,6 +33,8 @@ def runserver():
     server.register_function(changedirectory, "changedirectory")
     server.register_function(printworkingdirectory, "printworkingdirectory")
     server.serve_forever()
-
-if __name__ == "__main__":
-    runserver()
+try:
+    if __name__ == "__main__":
+        runserver()
+except OSError:
+    pass
